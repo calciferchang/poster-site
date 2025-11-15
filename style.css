@@ -1,0 +1,59 @@
+:root {
+  --gap: 1.5rem;
+  --pad: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  background: #ffffff;
+  color: #111;
+}
+
+.card-container {
+  display: flex;
+  gap: var(--gap);
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.card-col {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.card-col.title h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+
+.card-col.description p {
+  margin: 0.25rem 0;
+}
+
+.card-col.video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+  }
+}
