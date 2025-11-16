@@ -1,59 +1,103 @@
-:root {
-  --gap: 1.5rem;
-  --pad: 1rem;
+@font-face {
+  font-family: "ABC Diatype Semi-Mono";
+  src:
+    url(fonts/ABCDiatypeSemi-MonoEdu-Regular.woff2) format("woff2"),
+    url(fonts/ABCDiatypeSemi-MonoEdu-Regular.woff) format("woff");
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+:root {
+  --text: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+  --bg-color: #1c1b1a;
+  --ui-color: #343331;
+  --text-color: #cecdc3;
+  --text-color-faint: #878580;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family:
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    Arial,
-    sans-serif;
-  background: #ffffff;
-  color: #111;
-}
+  padding: 40px;
+  padding-top: 8px;
 
-.card-container {
+  font-family: "ABC Diatype Semi-Mono", sans-serif;
+  font-size: var(--text);
+  background: var(--bg-color);
+  color: var(--text-color);
   display: flex;
-  gap: var(--gap);
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: stretch;
+  justify-content: center;
 }
 
-.card-col {
-  flex: 1 1 0;
-  min-width: 0;
-  padding: 1rem;
+.container {
+  border-top: solid 1px var(--ui-color);
+  padding-top: 8px;
+  display: flex;
+  max-width: 60em;
+  gap: 0.8em;
+
+  .title {
+    flex: 0 0 37.5%;
+    h2 {
+      padding-right: 1.5em;
+      font-size: var(--text);
+      font-weight: normal;
+    }
+  }
+
+  .info {
+    flex: 0 0 37.5%;
+    > * {
+      padding-right: 1em;
+    }
+    p {
+      margin-bottom: 1.5em;
+    }
+    ul.links {
+      list-style-type: none;
+    }
+  }
+
+  video {
+    flex: 0 0 25%;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
-.card-col.title h1 {
-  font-size: 2rem;
-  margin: 0 0 0.5rem;
+a {
+  text-decoration: wavy;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
-.card-col.description p {
-  margin: 0.25rem 0;
+a.external::after {
+  margin-left: 0.25em;
+  content: "↗︎";
+  color: var(--text-color-faint);
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.card-col.video video {
-  width: 100%;
-  height: auto;
-  display: block;
+.github::before {
+  background-color: var(--text-color-faint);
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  content: "";
+  -webkit-mask: url(icons/github.svg) no-repeat 50% 50%;
+  mask: url(icons/github.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  vertical-align: middle;
+  margin-right: 0.25em;
 }
 
 @media (max-width: 768px) {
-  .card-container {
+  .container {
     flex-direction: column;
+    max-width: 20em;
   }
 }
