@@ -147,9 +147,18 @@ a.external::after {
   margin-right: 0.25em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 570px) {
+  .header {
+    flex-direction: column;
+    .about-row {
+      flex-direction: column;
+    }
+    li {
+      list-style-type: disc;
+      margin-left: var(--spacing-md);
+    }
+  }
   .container {
     flex-direction: column;
-    max-width: 20em;
   }
 }
