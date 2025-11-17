@@ -27,7 +27,8 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .container {
@@ -36,13 +37,14 @@ body {
   display: flex;
   max-width: 60em;
   gap: 0.8em;
-
+  flex-grow: 1;
   .title {
     flex: 0 0 37.5%;
     h2 {
       padding-right: 1.5em;
       font-size: var(--text);
       font-weight: normal;
+      text-transform: uppercase;
     }
   }
 
@@ -68,7 +70,7 @@ body {
 }
 
 a {
-  text-decoration: wavy;
+  text-decoration: underline;
   color: var(--text-color);
   transition: color 0.3s ease;
 }
