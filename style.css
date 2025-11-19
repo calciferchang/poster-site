@@ -6,7 +6,7 @@
 }
 
 :root {
-  --text: 0.875rem;
+  --text: 0.95em;
   --bg-color: #1c1b1a;
   --ui-color: #343331;
   --text-color: #cecdc3;
@@ -141,6 +141,34 @@ a.external::after {
   content: "";
   -webkit-mask: url(icons/github.svg) no-repeat 50% 50%;
   mask: url(icons/github.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  vertical-align: middle;
+  margin-right: 0.25em;
+}
+
+.aredotna::before {
+  background-color: var(--text-color-faint);
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  content: "";
+  -webkit-mask: url(icons/aredotna.svg) no-repeat 50% 50%;
+  mask: url(icons/aredotna.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  vertical-align: middle;
+  margin-right: 0.25em;
+}
+
+.livepreview::before {
+  background-color: var(--text-color-faint);
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  content: "";
+  -webkit-mask: url(icons/flower.svg) no-repeat 50% 50%;
+  mask: url(icons/flower.svg) no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   vertical-align: middle;
