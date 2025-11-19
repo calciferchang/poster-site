@@ -24,7 +24,10 @@
   font-size: var(--text);
   font-weight: normal;
 }
-
+html,
+body {
+  height: 95vh;
+}
 body {
   padding: 40px;
   padding-top: 8px;
@@ -41,12 +44,18 @@ li {
   margin-bottom: var(--spacing-xs);
 }
 
+footer {
+  color: var(--text-color-faint);
+  font-size: 0.8rem;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
 .container {
   border-top: solid 1px var(--ui-color);
   padding-top: 8px;
   display: flex;
   gap: var(--spacing-md);
-  flex-grow: 1;
   .title {
     flex: 0 0 37.5%;
     h2 {
